@@ -4,7 +4,6 @@ class Movie < Item
     @silet = silet
   end
 
-  private
-  def can_be_archived?
+  private def can_be_archived?
   end
 end

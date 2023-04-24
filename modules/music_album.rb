@@ -4,7 +4,6 @@ class MusicAlbum < Item
     @on_spotify = on_spotify
   end
 
-  private
-  def can_be_archived?
+  private def can_be_archived?
   end
 end

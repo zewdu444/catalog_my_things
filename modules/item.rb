@@ -11,8 +11,7 @@ class Item
     end
   end
 
-  private
-  def can_be_archived?
+  private def can_be_archived?
     if (Time.now.year - @published_date.year) > 10
       true
     else

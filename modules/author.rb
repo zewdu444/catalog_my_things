@@ -5,4 +5,7 @@ class Author
     @last_name = last_name
     @items = items
   end
+
+  def add_item(item)
+  end
 end

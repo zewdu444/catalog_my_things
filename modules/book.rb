@@ -1,4 +1,4 @@
-require_relative './item'
+require_relative 'item'
 class Book < Item
   def initialize(publisher, cover_state)
     @publisher = publisher
@@ -6,7 +6,7 @@ class Book < Item
   end
 
   private
-  def can_be_archived?()
+  def can_be_archived?
   end
 
 end

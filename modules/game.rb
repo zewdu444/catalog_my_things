@@ -1,4 +1,4 @@
-require_relative './item'
+require_relative 'item'
 class Game < Item
   def initialize(multiplayer, last_played_at)
     @multiplayer = multiplayer
@@ -6,6 +6,6 @@ class Game < Item
   end
 
   private
-  def can_be_archived?()
+  def can_be_archived?
   end
 end

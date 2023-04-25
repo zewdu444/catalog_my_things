@@ -12,9 +12,11 @@ class App
   end
 
 def list_music_albums
+  count = 0
   puts 'Avaible music albums are:'
   @things.music_albums.each do |music_album|
-    puts "This music album is in #{music_album.genre.name} genre and published at #{music_album.publish_date} and  #{music_album.on_spotify ? "available" : "not available"} on Spotify."
+    puts "#{count})This music album is in #{music_album.genre.name} genre and published at #{music_album.publish_date} and  #{music_album.on_spotify ? "available" : "not available"} on Spotify."
+    count += 1 
   end
 end
 
@@ -27,7 +29,7 @@ def create_music_album
 end
 
 def add_music_album
-  print "Is music album on spotify? [Y/N]: "
+  print "Does music album avaible on the spotify? [Y/N]: "
   on_spotify = gets.chomp.downcase == 'y'
   puts "Enter music album's published date(format: YYYY/MM/DD): "
   published_date =  Date.parse(gets.chomp)
@@ -44,14 +46,21 @@ def create_genre
   genre_name = gets.chomp
   genre = Genre.new(genre_name)
   @things.add_genre(genre)
-  puts "Genre added successfully!"
   return genre
+end
+
+def create_labels
+  print "Enter label name: "
+  label_name = gets.chomp
+  label = Label.new(label_name, 'Unkown')
+  @things.add_label(label)
+  return label
 end
 
 def list_genres
   puts 'Avaible genres are:'
   @things.genres.each do |genre|
-    puts genre.name
+    puts genre
   end
 end
 end

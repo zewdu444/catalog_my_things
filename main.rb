@@ -1,5 +1,4 @@
 require_relative 'app'
-require_relative './app'
 require_relative './modules/things'
 require_relative './menu'
 

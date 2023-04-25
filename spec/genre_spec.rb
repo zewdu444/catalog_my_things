@@ -1,4 +1,4 @@
-require_relative '../genre'
+require_relative '../modules/genre'
 describe Genre do
   before :each do
     @genre = Genre.new('romantic')

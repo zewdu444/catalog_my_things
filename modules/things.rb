@@ -54,7 +54,7 @@ class Things
     @authors << author unless @authors.include?(author)
     json_author =
     {
-      first_name: author.name,
+      first_name: author.first_name,
       last_name: author.last_name,
       id: author.id
     }
@@ -68,7 +68,7 @@ class Things
       name: source.name,
       id: source.id
     }
-  json_write('./localstorage/genre.json', json_source)
+  json_write('./localstorage/source.json', json_source)
   end
 
   def add_book(book)

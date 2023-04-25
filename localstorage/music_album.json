@@ -8,5 +8,25 @@
     "author_first_name": "p",
     "author_last_name": "p",
     "source": "p"
+  },
+  {
+    "on_spotify": true,
+    "genre": "pop",
+    "publish_date": "2000-02-02",
+    "id": 304,
+    "label_title": "ppo",
+    "author_first_name": "zsd",
+    "author_last_name": "dzf",
+    "source": "dwas"
+  },
+  {
+    "on_spotify": true,
+    "genre": "tt",
+    "publish_date": "2000-03-03",
+    "id": 20,
+    "label_title": "wewf",
+    "author_first_name": "ef",
+    "author_last_name": "efs",
+    "source": "wtw"
   }
 ]

@@ -1,8 +1,0 @@
-require_relative 'author'
-require_relative 'book'
-require_relative 'game'
-require_relative 'item'
-require_relative 'label'
-require_relative 'movie'
-require_relative 'music_album'
-require_relative 'source'

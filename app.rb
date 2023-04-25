@@ -30,8 +30,10 @@ class App
 
   def list_books
     puts 'Avaible books are:'
+    @counter =1
     @things.books.each do |book|
-      puts "This book is in #{book.genre.name} genre and published at #{book.publish_date} and  #{book.cover_state} cover state."
+      puts "#{@counter}) This book is in #{book.genre.name} genre and published at #{book.publish_date} and  #{book.cover_state} cover state."
+      @counter +=1
     end
   end
 
@@ -54,9 +56,11 @@ class App
   end
 
   def list_games
+    @counter =1
     puts 'Avaible games are:'
     @things.games.each do |game|
-      puts "This game is in #{game.genre.name} genre and published at #{game.publish_date} and multiplayer mode  #{game.multiplayer} ."
+      puts "#{@counter}) This game is in #{game.genre.name} genre and published at #{game.publish_date} and multiplayer mode  #{game.multiplayer} ."
+      @counter +=1
     end
   end
 
@@ -69,16 +73,20 @@ class App
   end
 
   def list_genres
+    @counter =1
     puts 'Avaible genres are:'
     @things.genres.each do |genre|
-      puts "Genre name: #{genre.name}"
+      puts "#{@counter}) Genre name: #{genre.name}"
+      @counter +=1
     end
   end
 
   def list_sources
+    @counter =1
     puts 'Avaible sources are:'
     @things.sources.each do |source|
-      puts "Source name: #{source.name}"
+      puts "#{@counter}) Source name: #{source.name}"
+      @counter +=1
     end
   end
 
@@ -91,9 +99,11 @@ class App
   end
 
   def list_authors
+    @counter =1
     puts 'Avaible authors are:'
     @things.authors.each do |author|
-      puts "Author name: #{author.first_name} #{author.last_name}"
+      puts "#{@counter}) Author name: #{author.first_name} #{author.last_name}"
+      @counter +=1
     end
   end
 
@@ -108,9 +118,11 @@ class App
   end
 
   def list_labels
+    @counter =1
     puts 'Avaible labels are:'
     @things.labels.each do |label|
-      puts "title: #{label.title} and color: #{label.color}"
+      puts "#{ @counter}) title: #{label.title} and color: #{label.color}"
+      @counter +=1
     end
   end
 

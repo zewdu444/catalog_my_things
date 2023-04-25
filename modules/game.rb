@@ -11,7 +11,7 @@ class Game < Item
   private
 
   def can_be_archived?
-    if Time.now.year - Date.parse(@last_played_at).year > 2 && super
+    if (Time.now.year - Date.parse(@last_played_at).year) > 2 && super
       true
     else
       false

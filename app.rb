@@ -16,9 +16,9 @@ class App
     puts 'Avaible music albums are:'
     @things.music_albums.each do |music_album|
       puts "#{count})This music album is in " \
-           "#{music_album.genre.name} genre and published  " \
-           "at #{music_album.publish_date} and   " \
-           "#{music_album.on_spotify ? 'available' : 'not available'} on Spotify."
+           "#{music_album.genre.name} genre and published " \
+           "at #{music_album.publish_date} and " \
+           "#{music_album.on_spotify ? 'is available' : 'is not available'} on Spotify."
       count += 1
     end
   end

@@ -28,7 +28,7 @@ class Item
     end
   end
   private def can_be_archived?
-    if (Time.now.year - @published_date.year) > 10
+    if (Time.now.year - Date.parse(@published_date).year) > 10  #if date is in string format
       true
     else
       false

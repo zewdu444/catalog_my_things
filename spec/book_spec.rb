@@ -13,11 +13,11 @@ describe Book do
   it 'should be return true if the book is damaged' do
     @book = Book.new('20011-01-01', 'Amazon', 'bad')
     @book.move_to_archive
-    expect(@book.archived).to be true
+    expect(@book.send(:can_be_archived?)).to be true
   end
   it 'should be return true if the book is older than 10 years' do
     @book = Book.new('2002-01-01', 'Amazon', 'good')
     @book.move_to_archive
-    expect(@book.archived).to be true
+    expect(@book.send(:can_be_archived?)).to be true
   end
 end

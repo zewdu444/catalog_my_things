@@ -1,5 +1,5 @@
 require 'json'
-require_relative './things'
+require_relative 'things'
 
 module JsonReadWrite
   def json_write(file_name, json_data)
@@ -12,21 +12,21 @@ module JsonReadWrite
 
   def json_read(file_name)
     case file_name
-    when '../localstorage/book.json'
+    when './localstorage/book.json'
       read_books(file_name)
-    when '../localstorage/genre.json'
+    when './localstorage/genre.json'
       read_genres(file_name)
-    when '../localstorage/music_album.json'
+    when './localstorage/music_album.json'
       read_music_albums(file_name)
-    when '../localstorage/movie.json'
+    when './localstorage/movie.json'
       read_movies(file_name)
-    when '../localstorage/source.json'
+    when './localstorage/source.json'
       read_sources(file_name)
-    when '../localstorage/game.json'
+    when './localstorage/game.json'
       read_games(file_name)
-    when '../localstorage/label.json'
+    when './localstorage/label.json'
       read_labels(file_name)
-    when '../localstorage/author.json'
+    when './localstorage/author.json'
       read_authors(file_name)
     else
       []

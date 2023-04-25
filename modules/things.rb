@@ -1,16 +1,16 @@
-require 'json_read_write'
+require_relative 'json_read_write'
 class Things
   include JsonReadWrite
   attr_reader :music_albums, :genres, :books, :labels, :authors, :games, :sources
 
   def initialize
-    @music_albums = [] || json_read('../localstorage/music_album.json')
-    @books = [] || json_read('../localstorage/book.json')
-    @labels = [] || json_read('../localstorage/label.json')
-    @genres = [] || json_read('../localstorage/genre.json')
-    @authors = [] || json_read('../localstorage/author.json')
-    @games = [] || json_read('../localstorage/game.json')
-    @sources = [] || json_read('../localstorage/source.json')
+    @music_albums = [] || json_read('./localstorage/music_album.json')
+    @books = [] || json_read('./localstorage/book.json')
+    @labels = [] || json_read('./localstorage/label.json')
+    @genres = [] || json_read('./localstorage/genre.json')
+    @authors = [] || json_read('./localstorage/author.json')
+    @games = [] || json_read('./localstorage/game.json')
+    @sources = [] || json_read('./localstorage/source.json')
   end
 
   def add_music_album(music_album)
@@ -26,7 +26,7 @@ class Things
         author_last_name: music_album.author.last_name,
         source: music_album.source.name
       }
-    json_write('../localstorage/music_album.json', json_music_album)
+    json_write('./localstorage/music_album.json', json_music_album)
   end
 
   def add_genre(genre)

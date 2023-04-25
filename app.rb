@@ -11,7 +11,7 @@ class App
     @things = things
   end
 
-def list_music_albums
+def List_
   puts 'Avaible music albums are:'
   @things.music_albums.each do |music_album|
     puts music_album

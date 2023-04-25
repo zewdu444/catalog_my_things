@@ -1,4 +1,3 @@
-
 class Author
   def initialize(first_name, last_name, items)
     @first_name = first_name
@@ -6,6 +5,5 @@ class Author
     @items = items
   end
 
-  def add_item(item)
-  end
+  def add_item(item); end
 end

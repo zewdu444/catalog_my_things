@@ -1,9 +1,8 @@
-class Source 
-  def initialize(name, items)
+class Source
+  def initialize(name, _items)
     @name = name
     @items = []
   end
 
-  def add_item(item)
-  end
+  def add_item(item); end
 end

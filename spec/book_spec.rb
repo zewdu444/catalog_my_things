@@ -3,7 +3,6 @@ require_relative '../modules/label'
 require_relative '../modules/item'
 require_relative '../modules/book'
 
-
 describe Book do
   before :each do
     @book = Book.new('20020-01-01', 'Amazon', 'good')

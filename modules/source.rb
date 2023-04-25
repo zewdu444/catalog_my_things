@@ -1,5 +1,5 @@
 class Source
-  attr_reader :name
+  attr_reader :id, :name, :items, :source
 
   def initialize(name)
     @name = name

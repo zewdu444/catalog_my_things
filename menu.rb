@@ -2,14 +2,15 @@ class Menu
   MENU_OPTIONS = {
     '1' => :create_music_album,
     '2' => :create_book,
-    '3' => :create_genre,
+    '3' => :create_game,
     '4' => :list_books,
-    '5' => :list_labels,
+    '5' => :list_games,
     '6' => :list_music_albums,
     '7' => :list_genres,
     '8' => :list_sources,
     '9' => :list_authors,
-    '10' => :exit
+    '10' => :list_labels,
+    '11' => :exit
   }.freeze
 
   def initialize(app)

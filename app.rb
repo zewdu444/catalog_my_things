@@ -5,6 +5,7 @@ require_relative './modules/item'
 require_relative './modules/label'
 require_relative './modules/music_album'
 require_relative './modules/source'
+require 'date'
 
 class App
   def initialize(things)
@@ -22,7 +23,7 @@ class App
       count += 1
     end
   end
-
+  
   def create_music_album
     music_album = add_music_album
     genre = create_genre
@@ -36,13 +37,57 @@ class App
     @things.add_music_album(music_album)
     puts 'Music album added successfully!'
   end
+  
+    def create_book
+    puts 'to create book please enter the following information:'
+    print "Enter book's published date(format: YYYY/MM/DD): "
+    published_date = Date.parse(gets.chomp)
+    print "Enter book's publisher: "
+    publisher = gets.chomp
+    print "Enter book's cover state: "
+    cover_state = gets.chomp
+    book = Book.new(published_date, publisher, cover_state)
+    book.add_author(create_author)
+    book.add_label(create_label)
+    book.add_source(create_source)
+    book.add_genre(create_genre)
+    @things.add_book(book)
+    puts 'Book added successfully!'
+  end
 
-  def list_genres
-    puts 'Avaible genres are:'
-    count = 0
-    @things.genres.each do |genre|
-      puts "#{count}) [Genre] name: #{genre}"
-      count += 1
+  def list_books
+    puts 'Avaible books are:'
+    @counter = 1
+    @things.books.each do |book|
+      puts "#{@counter}) This book is in #{book.genre.name} genre and published at #{book.publish_date} and  #{book.cover_state} cover state."
+      @counter += 1
+    end
+  end
+
+  def create_game
+    puts 'to create game please enter the following information:'
+    print "Enter game's published date(format: YYYY/MM/DD): "
+    published_date = Date.parse(gets.chomp)
+    print 'Enter game multiplayer mode:[true/false] '
+    multiplayer = gets.chomp.to_s
+    multiplayer = multiplayer == 'true'
+    print "Enter game's last played date(format: YYYY/MM/DD): "
+    last_played_at = Date.parse(gets.chomp)
+    game = Game.new(published_date, multiplayer, last_played_at)
+    game.add_author(create_author)
+    game.add_label(create_label)
+    game.add_source(create_source)
+    game.add_genre(create_genre)
+    @things.add_game(game)
+    puts 'Game added successfully!'
+  end
+
+  def list_games
+    @counter = 1
+    puts 'Avaible games are:'
+    @things.games.each do |game|
+      puts "#{@counter}) This game is in #{game.genre.name} genre and published at #{game.publish_date} and multiplayer mode  #{game.multiplayer} ."
+      @counter += 1
     end
   end
 
@@ -63,7 +108,16 @@ class App
       count += 1
     end
   end
-
+ 
+  def list_genres
+    @counter = 1
+    puts 'Avaible genres are:'
+    @things.genres.each do |genre|
+      puts "#{@counter}) [Genre] name: #{genre.name}"
+      @counter += 1
+    end
+  end
+ 
   def list_authors
     puts 'Avaible Authors are:'
     count = 0
@@ -82,7 +136,7 @@ class App
     published_date = Date.parse(gets.chomp)
     MusicAlbum.new(on_spotify, published_date)
   end
-
+  
   def create_genre
     print 'Enter genre: '
     genre_name = gets.chomp
@@ -98,7 +152,7 @@ class App
     @things.add_label(label)
     label
   end
-
+ 
   def create_source
     puts 'Enter the source (From a friend, Online, ...): '
     source_name = gets.chomp
@@ -115,5 +169,15 @@ class App
     author = Author.new(first_name, last_name)
     @things.add_author(author)
     author
+  end
+
+  def create_label
+    print 'Enter label title: '
+    title = gets.chomp
+    print 'Enter label color: '
+    color = gets.chomp
+    label = Label.new(title, color)
+    @things.add_label(label)
+    label
   end
 end

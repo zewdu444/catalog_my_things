@@ -1,3 +1,5 @@
+require 'date'
+
 class Item
   attr_reader :id, :publish_date, :archived, :genere, :author, :label, :source
 
@@ -36,6 +38,6 @@ class Item
   private
 
   def can_be_archived?
-    (Time.now.year - Date.parse(@published_date).year) > 10
+    (Time.now.year - Date.parse(@publish_date).year) > 10
   end
 end

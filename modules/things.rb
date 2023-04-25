@@ -7,6 +7,7 @@ require_relative 'game'
 require_relative 'author'
 class Things
   attr_reader :music_albums, :genres, :books, :labels, :authors, :games, :sources
+
   def initialize
     @music_albums = []
     @books = []
@@ -24,18 +25,23 @@ class Things
   def add_genre(genre)
     @genres << genre
   end
+
   def add_book(book)
     @books << book
   end
+
   def add_label(label)
     @labels << label
   end
+
   def add_author(author)
     @authors << author
   end
+
   def add_game(game)
     @games << game
   end
+
   def add_source(source)
     @sources << source
   end

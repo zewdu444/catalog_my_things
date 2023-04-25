@@ -16,6 +16,7 @@ class Menu
   def initialize(app)
     @app = app
   end
+
   def show
     loop do
       print_menu_options

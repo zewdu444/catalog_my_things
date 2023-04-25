@@ -7,12 +7,15 @@ class Menu
     '5' => :list_labels,
     '6' => :list_music_albums,
     '7' => :list_genres,
-    '8' => :exit
+    '8' => :list_sources,
+    '9' => :list_authors,
+    '10' => :exit
   }.freeze
 
   def initialize(app)
     @app = app
   end
+
   def show
     loop do
       print_menu_options

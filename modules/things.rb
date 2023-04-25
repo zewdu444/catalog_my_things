@@ -1,6 +1,7 @@
 require_relative 'genre'
 class Things
-  attr_reader :music_albums, :genres
+  attr_reader :music_albums, :genres, :labels, :authors, :sources
+
   def initialize
     @music_albums = []
     @genres = []

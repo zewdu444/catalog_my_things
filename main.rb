@@ -3,7 +3,6 @@ require_relative './modules/things'
 require_relative './menu'
 
 def main
-  puts "File exists: #{File.exist?('./localstorage/music_album.json')}"
   things = Things.new
   app = App.new(things)
   menu = Menu.new(app)

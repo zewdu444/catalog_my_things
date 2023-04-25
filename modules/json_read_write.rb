@@ -35,12 +35,32 @@ module JsonReadWrite
 
   private
 
-  def read_books(file_name)
-    books = []
+  def read_music_albums(file_name)
+    music_albums = []
     temp = JSON.parse(File.read(file_name))
-    temp.each do |book|
-      books << Book.new(book['title'], book['author'])
+    temp.each do |music_album|
+      album = MusicAlbum.new(music_album['on_spotify'], music_album['publish_date'])
+      album.add_genre(Genre.new(music_album['name']))
+      album.add_source(Source.new(music_album['title']))
+      album.add_author(Author.new(music_album['first_name'], music_album['last_name']))
+      album.add_label(Label.new(music_album['source'], 'Uknown'))
+      music_albums << album
+      p album
     end
-    books
+    music_albums
   end
+
+  def read_books(file_name); end
+
+  def read_authors(file_name); end
+
+  def read_sources(file_name); end
+
+  def read_games(file_name); end
+
+  def read_genres(file_name); end
+
+  def read_movies(file_name); end
+
+  def read_labels(file_name); end
 end

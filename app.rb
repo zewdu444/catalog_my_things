@@ -5,6 +5,8 @@ require_relative './modules/item'
 require_relative './modules/label'
 require_relative './modules/music_album'
 require_relative './modules/source'
+require_relative './modules/genre'
+
 require 'date'
 
 class App
@@ -17,9 +19,9 @@ class App
     puts 'Avaible music albums are:'
     @things.music_albums.each do |music_album|
       puts "#{count})This music album is in " \
-           "#{music_album.genre.name} genre and published " \
-           "at #{music_album.publish_date} and " \
-           "#{music_album.on_spotify ? 'is available' : 'is not available'} on Spotify."
+           "#{music_album.genre.name} genre, and published " \
+           "at #{music_album.publish_date} which is " \
+           "#{music_album.on_spotify ? 'available' : 'not available'} on the Spotify."
       count += 1
     end
   end
@@ -59,7 +61,7 @@ class App
     puts 'Avaible books are:'
     @counter = 1
     @things.books.each do |book|
-      puts "#{@counter}) This book is in #{book.genre.name} genre and published at #{book.publish_date} and  #{book.cover_state} cover state."
+      puts "#{@counter}) This book is in #{book.genre.name} genre, by #{book.author.first_name} #{book.author.last_name}. published at #{book.publish_date} and has #{book.cover_state} cover state."
       @counter += 1
     end
   end

@@ -11,27 +11,47 @@ class App
     @things = things
   end
 
-def List_
+def list_music_albums
   puts 'Avaible music albums are:'
   @things.music_albums.each do |music_album|
     puts music_album
   end
 end
 
-def create_music_album(on_spotify, published_date)
-  music_album = MusicAlbum.new(on_spotify, published_date)
+def create_music_album #should add music album property to genre also.
+  music_album = add_music_album
+  genre = add_music_album_genre
+  music_album.genre = genre
   @things.add_music_album(music_album)
+  puts "Music album added successfully!"
 end
 
-def create_genre(genre_name)
+def add_music_album
+  print "Is music album on spotify? [Y/N]: "
+  on_spotify = gets.chomp.downcase == 'y'
+  puts "Enter music album's published date(format: YYYY/MM/DD): "
+  published_date =  Date.parse(gets.chomp)
+  music_album = MusicAlbum.new(on_spotify, published_date)
+  return music_album
+end
+
+def add_music_album_genre
+  create_genre
+end
+
+def create_genre
+  print "Enter genre: "
+  genre_name = gets.chomp
   genre = Genre.new(genre_name)
   @things.add_genre(genre)
+  puts "Genre added successfully!"
+  return genre
 end
 
 def list_genres
   puts 'Avaible genres are:'
   @things.genres.each do |genre|
-    puts genre
+    puts genre.name
   end
 end
 end

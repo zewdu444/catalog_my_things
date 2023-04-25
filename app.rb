@@ -6,7 +6,6 @@ require_relative './modules/label'
 require_relative './modules/music_album'
 require_relative './modules/source'
 require_relative './modules/genre'
-
 require 'date'
 
 class App
@@ -25,7 +24,7 @@ class App
       count += 1
     end
   end
-  
+
   def create_music_album
     music_album = add_music_album
     genre = create_genre
@@ -39,8 +38,8 @@ class App
     @things.add_music_album(music_album)
     puts 'Music album added successfully!'
   end
-  
-    def create_book
+
+  def create_book
     puts 'to create book please enter the following information:'
     print "Enter book's published date(format: YYYY/MM/DD): "
     published_date = Date.parse(gets.chomp)
@@ -110,7 +109,7 @@ class App
       count += 1
     end
   end
- 
+
   def list_genres
     @counter = 1
     puts 'Avaible genres are:'
@@ -119,7 +118,7 @@ class App
       @counter += 1
     end
   end
- 
+
   def list_authors
     puts 'Avaible Authors are:'
     count = 0
@@ -138,7 +137,7 @@ class App
     published_date = Date.parse(gets.chomp)
     MusicAlbum.new(on_spotify, published_date)
   end
-  
+
   def create_genre
     print 'Enter genre: '
     genre_name = gets.chomp
@@ -154,7 +153,7 @@ class App
     @things.add_label(label)
     label
   end
- 
+
   def create_source
     puts 'Enter the source (From a friend, Online, ...): '
     source_name = gets.chomp

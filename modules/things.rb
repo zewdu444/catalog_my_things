@@ -31,18 +31,44 @@ class Things
 
   def add_genre(genre)
     @genres << genre unless @genres.include?(genre)
+    json_genre =
+      {
+        name: genre.name,
+        id: genre.id
+      }
+    json_write('./localstorage/genre.json', json_genre)
   end
 
   def add_label(label)
     @labels << label unless @labels.include?(label)
+    json_label =
+    {
+      title: label.title,
+      id: label.id,
+      color: label.color
+    }
+  json_write('./localstorage/label.json', json_label)
   end
 
   def add_author(author)
     @authors << author unless @authors.include?(author)
+    json_author =
+    {
+      first_name: author.name,
+      last_name: author.last_name,
+      id: author.id
+    }
+  json_write('./localstorage/author.json', json_author)
   end
 
   def add_source(source)
     @sources << source unless @sources.include?(source)
+    json_source =
+    {
+      name: source.name,
+      id: source.id
+    }
+  json_write('./localstorage/genre.json', json_source)
   end
 
   def add_book(book)

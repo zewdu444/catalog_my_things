@@ -14,11 +14,11 @@ class App
 def list_music_albums
   puts 'Avaible music albums are:'
   @things.music_albums.each do |music_album|
-    puts music_album
+    puts "This music album is in #{music_album.genre.name} genre and published at #{music_album.publish_date} and  #{music_album.on_spotify ? "available" : "not available"} on Spotify."
   end
 end
 
-def create_music_album #should add music album property to genre also.
+def create_music_album
   music_album = add_music_album
   genre = add_music_album_genre
   music_album.genre = genre

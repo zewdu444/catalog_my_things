@@ -22,10 +22,21 @@ end
 
 def create_music_album
   music_album = add_music_album
-  genre = add_music_album_genre
+  genre = create_genre
+  label = create_label
+  source = create_source
   music_album.genre = genre
+  music_album.label = label
+  music_album.source = source
   @things.add_music_album(music_album)
   puts "Music album added successfully!"
+end
+
+def list_genres
+  puts 'Avaible genres are:'
+  @things.genres.each do |genre|
+    puts genre
+  end
 end
 
 def add_music_album
@@ -37,10 +48,7 @@ def add_music_album
   return music_album
 end
 
-def add_music_album_genre
-  create_genre
-end
-
+private
 def create_genre
   print "Enter genre: "
   genre_name = gets.chomp
@@ -49,18 +57,20 @@ def create_genre
   return genre
 end
 
-def create_labels
-  print "Enter label name: "
+def create_label
+  put "Enter label name: "
   label_name = gets.chomp
   label = Label.new(label_name, 'Unkown')
   @things.add_label(label)
   return label
 end
 
-def list_genres
-  puts 'Avaible genres are:'
-  @things.genres.each do |genre|
-    puts genre
-  end
+def create_source
+  put "Enter the source (From a friend, Online, ...): "
+  source_name = gets.chomp
+  source = Source.new(source_name)
+  @things.add_source(source)
+  return source
 end
+
 end

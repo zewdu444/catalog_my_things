@@ -15,10 +15,10 @@ class App
     count = 0
     puts 'Avaible music albums are:'
     @things.music_albums.each do |music_album|
-      puts "#{count})This music album is in "\
-      "#{music_album.genre.name} genre and published  "\
-      "at #{music_album.publish_date} and  "\
-      " #{music_album.on_spotify ? 'available' : 'not available'} on Spotify."
+      puts "#{count})This music album is in " \
+           "#{music_album.genre.name} genre and published  " \
+           "at #{music_album.publish_date} and   " \
+           "#{music_album.on_spotify ? 'available' : 'not available'} on Spotify."
       count += 1
     end
   end
@@ -74,6 +74,7 @@ class App
   end
 
   private
+
   def add_music_album
     print 'Does music album avaible on the spotify? [Y/N]: '
     on_spotify = gets.chomp.downcase == 'y'

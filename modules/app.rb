@@ -19,7 +19,9 @@ def list_music_albums
   end
 end
 
-def create_music_album
+def create_music_album(on_spotify, published_date)
+  music_album = MusicAlbum.new(on_spotify, published_date)
+  @things.add_music_album(music_album)
 end
 
 def create_genre(genre_name)

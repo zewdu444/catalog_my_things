@@ -14,9 +14,9 @@ describe Genre do
 
   context 'Item of Genre should be an instance of Item class' do
     it 'returns true' do
-      item = Item.new('2000-10-2')
-      @genre.add_item(item)
-      expect(@genre.items.first).to be_an_instance_of(Item)
+      @item = Item.new('2000-10-2')
+      @item.add_genre(@genre)
+      expect(@genre.items).to include(@item)
     end
   end
 end

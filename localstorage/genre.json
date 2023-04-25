@@ -30,5 +30,17 @@
   {
     "name": "rock",
     "id": 852
+  },
+  {
+    "name": "pop",
+    "id": 403
+  },
+  {
+    "name": "romance",
+    "id": 120
+  },
+  {
+    "name": "r",
+    "id": 653
   }
 ]

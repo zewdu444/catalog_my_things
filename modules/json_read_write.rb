@@ -5,7 +5,6 @@ module JsonReadWrite
   def json_write(file_name, json_data)
     existing_data = []
     existing_data = JSON.parse(File.read(file_name)) if File.exist?(file_name) && !File.empty?(file_name)
-
     existing_data << json_data
     File.write(file_name, JSON.pretty_generate(existing_data))
   end
@@ -45,22 +44,49 @@ module JsonReadWrite
       album.add_author(Author.new(music_album['first_name'], music_album['last_name']))
       album.add_label(Label.new(music_album['source'], 'Uknown'))
       music_albums << album
-      p album
     end
     music_albums
   end
 
+  def read_genres(file_name)
+    genres = []
+    temp = JSON.parse(File.read(file_name))
+    temp.each do |genre|
+      genres <<  Genre.new(genre['name'], genre['id'])
+    end
+    genres
+  end
+
   def read_books(file_name); end
 
-  def read_authors(file_name); end
+  def read_authors(file_name)
+    authors = []
+    temp = JSON.parse(File.read(file_name))
+    temp.each do |author|
+      authors <<  Author.new(author['first_name'], author['last_name'], author['id'])
+    end
+    authors
+  end
 
-  def read_sources(file_name); end
+  def read_sources(file_name)
+    sources = []
+    temp = JSON.parse(File.read(file_name))
+    temp.each do |source|  
+      sources << Source.new(source['name'], source['id'])
+    end
+    sources
+  end
 
   def read_games(file_name); end
 
-  def read_genres(file_name); end
-
   def read_movies(file_name); end
 
-  def read_labels(file_name); end
+  def read_labels(file_name)
+    labels = []
+    temp = JSON.parse(File.read(file_name))
+    temp.each do |label|  
+      labels << Source.new(label['title'], label['color'], label['id'])
+    end
+    labels
+  end
 end

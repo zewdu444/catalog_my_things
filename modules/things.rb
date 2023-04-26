@@ -22,6 +22,7 @@ class Things
         publish_date: music_album.publish_date,
         id: music_album.id,
         title: music_album.label.title,
+        color: music_album.label.color,
         first_name: music_album.author.first_name,
         last_name: music_album.author.last_name,
         source: music_album.source.name

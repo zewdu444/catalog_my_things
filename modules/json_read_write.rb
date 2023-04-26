@@ -42,9 +42,9 @@ module JsonReadWrite
       temp.each do |music_album|
         album = MusicAlbum.new(music_album['on_spotify'], music_album['publish_date'])
         album.add_genre(Genre.new(music_album['name']))
-        album.add_source(Source.new(music_album['title']))
+        album.add_source(Source.new(music_album['source']))
         album.add_author(Author.new(music_album['first_name'], music_album['last_name']))
-        album.add_label(Label.new(music_album['source'], 'Uknown'))
+        album.add_label(Label.new(music_album['title'], music_album['color']))
         music_albums << album
       end
     end

@@ -28,7 +28,7 @@ class App
   def create_music_album
     music_album = add_music_album
     genre = create_genre
-    label = create_music_album_label
+    label = create_label
     source = create_source
     author = create_author
     music_album.add_genre(genre)
@@ -144,14 +144,6 @@ class App
     genre = Genre.new(genre_name)
     @things.add_genre(genre)
     genre
-  end
-
-  def create_music_album_label
-    print 'Enter label name: '
-    label_name = gets.chomp
-    label = Label.new(label_name, 'Unkown')
-    @things.add_label(label)
-    label
   end
 
   def create_source

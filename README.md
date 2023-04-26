@@ -77,9 +77,19 @@ Example command:
 To run the project redirecting to the root directory of the project and run the following command:
 
 ```sh
- ruby main.rb (run the app locally)
+ ruby main.rb (run the web application)
 
 ```
+
+### Test 
+
+To test the web app run the following command:
+
+```sh
+ ruby main.rb ( test the web application)
+
+```
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **zewdu erkyhun**
@@ -99,8 +109,7 @@ To run the project redirecting to the root directory of the project and run the 
 👤 **Joseph David**
 
 - GitHub: [@jodavid444](https://github.com/jodavid444)
-- Twitter: [jodavid444dave](https://twitter.com/
-jodavid444dave)
+- Twitter:[@jodavid444dave](https://twitter.com/jodavid444dave)
 - LinkedIn: [joseph-david-01a8a5243](https://linkedin.com/in/joseph-david-01a8a5243/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

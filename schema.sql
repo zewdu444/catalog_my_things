@@ -1,37 +1,56 @@
+-- catalog of my things schema
+--genre table ---
 CREATE TABLE genre (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL
 );
 
-CREATE TABLE item (
-    id SERIAL PRIMARY KEY,
-    genre_id INTEGER REFERENCES genre (id),
-    author_id INTEGER REFERENCES author (id),
-    source_id INTEGER REFERENCES source (id),
-    label_id INTEGER REFERENCES label (id),
-    publish_date DATE,
-    archived BOOLEAN NOT NULL
-);
-
+-- source table ---
 CREATE TABLE source (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL
 );
 
+--- author table ---
 CREATE TABLE author (
     id SERIAL PRIMARY KEY,
     fist_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL
 );
 
+--- label table ---
 CREATE TABLE label (
     id SERIAL PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
     color VARCHAR(50) NOT NULL
 );
 
+--- music album table ---
 CREATE TABLE music_album (
-    id SERIAL PRIMARY KEY,
-    item_id INTEGER NOT NULL REFERENCES item (id),
-    on_spotify BOOLEAN NOT NULL
+   id serial primary key,
+   on_spotify boolean not null,
+   publish_date date not null,
+   archived boolean not null,
+   author_id int references author(id),
+   genre_id int references genre(id),
+   source_id int references source(id),
+   label_id int references label(id)
 );
+
+---  book table ---
+
+CREATE TABLE book(
+ id serial primary key,
+ publisher varchar(50) not null,
+ cover_state varchar(50) not null,
+ publish_date date not null,
+ archived boolean not null,
+ author_id int references author(id),
+ genre_id int references genre(id),
+ source_id int references source(id),
+ label_id int references label(id)
+);
+
+--- game table ---
+
+

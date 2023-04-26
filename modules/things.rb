@@ -74,6 +74,20 @@ class Things
 
   def add_book(book)
     @books << book unless @books.include?(book)
+    json_book =
+      {
+        id: book.id,
+        publish_date: book.publish_date,
+        cover_state: book.cover_state,
+        publisher: book.publisher,
+        name: book.genre.name,
+        title: book.label.title,
+        color: book.label.color,
+        first_name: book.author.first_name,
+        last_name: book.author.last_name,
+        source: book.source.name
+      }
+    json_write('./localstorage/book.json', json_book)
   end
 
   def add_game(game)

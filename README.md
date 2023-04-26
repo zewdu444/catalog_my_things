@@ -3,6 +3,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+   -[:video_camera: Video Presentation](#video-presentation)
   - [:camera: screenshot](#screenshot)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
@@ -22,6 +23,10 @@
 # 📇 Catalog of my things <a name="about-project"></a>
 
 > This project is console app built using ruby, the app will help you to keep a records of different types of things you own: books, music albums, movies, and games, the data are stored in json file, and it will be always useable whenever you start the app.
+
+## :video_camera: Video Presentation <a name="video-presentation"></a>
+
+[![Watch the video](./image/catalog_of_my_things.png)](https://drive.google.com/file/d/1E5rjdrRWB8o-o8q2isNwpAvmmvFhMZT0/view?usp=sharing)
 
 ## :camera: Screenshot <a name="Screen-shot"></a>
 

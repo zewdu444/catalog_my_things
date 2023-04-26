@@ -24,6 +24,7 @@
 > This project is console app built using ruby, the app will help you to keep a records of different types of things you own: books, music albums, movies, and games, the data are stored in json file, and it will be always useable whenever you start the app.
 
 ## :camera: Screenshot <a name="Screen-shot"></a>
+
   <img src="./image/catalod.png" alt="">
 
   <img src="./image/catalog_uml.png" alt="">
@@ -49,6 +50,7 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need:
+
 - Command line or terminal
 - IDE such as VsCode.
 - Ruby needs to be installed on your system.
@@ -63,6 +65,7 @@ Example command:
   cd catalog_my_things
 
 ```
+
 ### Install
 
 Example command:
@@ -72,6 +75,7 @@ Example command:
   bundle install (install all dependencies)
 
 ```
+
 ### Usage
 
 To run the project redirecting to the root directory of the project and run the following command:
@@ -98,13 +102,11 @@ To test the web app run the following command:
 - Twitter: [@zewdu444](https://twitter.com/zewdu444)
 - LinkedIn: [zewdu-anley](https://www.linkedin.com/in/zewdu-anley/)
 
-
 👤 **Mohi**
 
 - GitHub: [@mohisa302](https://github.com/mohisa302)
 - Twitter: [@Kholochelam](https://twitter.com/Kholochelam)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/mohadese-sadeghi-692551199/)
-
 
 👤 **Joseph David**
 

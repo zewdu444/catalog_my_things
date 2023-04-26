@@ -104,7 +104,22 @@ module JsonReadWrite
     sources
   end
 
-  def read_games(file_name); end
+  def read_games(file_name); 
+  games = []
+    file_contents = File.read(file_name)
+    unless file_contents.empty?
+      temp = JSON.parse(file_contents)
+      temp.each do |game|
+        read_game = Game.new(game['publish_date'], game['multiplayer'], game['last_played_at'])
+        read_game.add_genre(Genre.new(game['name']))
+        read_game.add_source(Source.new(game['source']))
+        read_game.add_author(Author.new(game['first_name'], game['last_name']))
+        read_game.add_label(Label.new(game['title'], game['color']))
+        games << read_game
+      end
+    end
+    games
+  end
 
   def read_labels(file_name)
     labels = []

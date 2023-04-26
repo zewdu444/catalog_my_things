@@ -29,3 +29,9 @@ CREATE TABLE label (
     title VARCHAR(50) NOT NULL,
     color VARCHAR(50) NOT NULL
 );
+
+CREATE TABLE music_album (
+    id SERIAL PRIMARY KEY,
+    item_id INTEGER NOT NULL REFERENCES item (id),
+    on_spotify BOOLEAN NOT NULL
+);

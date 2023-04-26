@@ -92,6 +92,5 @@ class Things
 
   def add_game(game)
     @games << game unless @games.include?(game)
-
   end
 end

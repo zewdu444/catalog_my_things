@@ -64,12 +64,12 @@ module JsonReadWrite
   end
 
   def read_books(file_name)
-    books= []
+    books = []
     file_contents = File.read(file_name)
     unless file_contents.empty?
       temp = JSON.parse(file_contents)
       temp.each do |book|
-        read_book = Book.new(book['publish_date'], book['publisher'], book['cover_state'] )
+        read_book = Book.new(book['publish_date'], book['publisher'], book['cover_state'])
         read_book.add_genre(Genre.new(book['name']))
         read_book.add_source(Source.new(book['source']))
         read_book.add_author(Author.new(book['first_name'], book['last_name']))

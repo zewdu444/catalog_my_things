@@ -92,19 +92,19 @@ class Things
 
   def add_game(game)
     @games << game unless @games.include?(game)
-      json_game =
-        {
-          id: game.id,
-          publish_date: game.publish_date,
-          multiplayer: game.multiplayer,
-          last_played_at: game.last_played_at,
-          name: game.genre.name,
-          title: game.label.title,
-          color: game.label.color,
-          first_name: game.author.first_name,
-          last_name: game.author.last_name,
-          source: game.source.name
-        }
-      json_write('./localstorage/game.json', json_game)
+    json_game =
+      {
+        id: game.id,
+        publish_date: game.publish_date,
+        multiplayer: game.multiplayer,
+        last_played_at: game.last_played_at,
+        name: game.genre.name,
+        title: game.label.title,
+        color: game.label.color,
+        first_name: game.author.first_name,
+        last_name: game.author.last_name,
+        source: game.source.name
+      }
+    json_write('./localstorage/game.json', json_game)
   end
 end

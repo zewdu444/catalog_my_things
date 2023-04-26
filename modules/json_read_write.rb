@@ -104,8 +104,8 @@ module JsonReadWrite
     sources
   end
 
-  def read_games(file_name); 
-  games = []
+  def read_games(file_name)
+    games = []
     file_contents = File.read(file_name)
     unless file_contents.empty?
       temp = JSON.parse(file_contents)

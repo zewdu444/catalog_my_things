@@ -86,7 +86,7 @@ To run the project redirecting to the root directory of the project and run the 
 To test the web app run the following command:
 
 ```sh
- ruby main.rb ( test the web application)
+ rspec ( test the web application)
 
 ```
 

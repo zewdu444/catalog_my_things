@@ -27,7 +27,7 @@
   <img src="./image/catalod.png" alt="">
 
   <img src="./image/catalog_uml.png" alt="">
-  
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -77,16 +77,16 @@ Example command:
 To run the project redirecting to the root directory of the project and run the following command:
 
 ```sh
- ruby main.rb (run the web application)
+ ruby main.rb (to run console application)
 
 ```
 
-### Test 
+### Test
 
 To test the web app run the following command:
 
 ```sh
- rspec ( test the web application)
+ rspec spec (  to test the console application)
 
 ```
 
@@ -116,8 +116,8 @@ To test the web app run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [Implement local storage]
-- [Add unit tests]
+- [Add web interface]
+- [Improve unit tests]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
